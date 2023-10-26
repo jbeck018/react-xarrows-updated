@@ -29,7 +29,7 @@ const parseLabels = (label: xarrowPropsType['labels']): labelsType => {
 
 // remove 'auto' as possible anchor from anchorCustomPositionType.position
 interface anchorCustomPositionType2 extends Omit<Required<anchorCustomPositionType>, 'position'> {
-  position: Exclude<typeof cAnchorEdge[number], 'auto'>;
+  position: Exclude<(typeof cAnchorEdge)[number], 'auto'>;
 }
 
 const parseAnchor = (anchor: anchorType) => {
@@ -154,7 +154,9 @@ const parsePropsFuncs: Required<{ [key in keyof xarrowPropsType]: Function }> = 
   path: noParseWithUpdatePos,
   curveness: parseNumWithUpdatePos,
   gridBreak: (userProp, _, updatePos) => withUpdate(parseGridBreak(userProp), updatePos),
-  // // gridRadius = strokeWidth * 2, //todo
+  gridRadius: parseNum,
+  tailTransformOffsetX: parseNumWithUpdatePos,
+  tailTransformOffsetY: parseNumWithUpdatePos,
   dashness: (userProp, propsRefs) => parseDashness(userProp, propsRefs),
   headShape: (userProp) => parseEdgeShape(userProp),
   tailShape: (userProp) => parseEdgeShape(userProp),
@@ -213,7 +215,9 @@ const defaultProps: Required<xarrowPropsType> = {
   path: 'smooth',
   curveness: 0.8,
   gridBreak: '50%',
-  // gridRadius : strokeWidth * 2, //todo
+  gridRadius: 0,
+  tailTransformOffsetX: 0,
+  tailTransformOffsetY: 0,
   dashness: false,
   headShape: 'arrow1',
   tailShape: 'arrow1',
@@ -256,7 +260,9 @@ type parsedXarrowProps = {
   showXarrow: boolean;
   curveness: number;
   gridBreak: { relative: number; abs: number };
-  // gridRadius: number;
+  gridRadius: number;
+  tailTransformOffsetX: number;
+  tailTransformOffsetY: number;
   dashness: {
     strokeLen: number;
     nonStrokeLen: number;

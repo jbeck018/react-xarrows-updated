@@ -1,11 +1,12 @@
 {
-  "name": "react-xarrows",
-  "version": "2.0.2",
-  "author": "Eliav Louski",
+  "name": "react-xarrows-updated",
+  "version": "1.0.0",
+  "author": "Eliav Louski & Jacob Beck",
   "description": "Draw arrows (or lines) between components in React!",
   "main": "./lib/index.js",
   "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "license": "MIT",
   "scripts": {
     "build": "webpack --mode development --config-name lib",
     "build:prod": "webpack --mode production --config-name lib",
@@ -18,20 +19,16 @@
     "clear:lib": "del /q lib && for /d %x in (lib\\*) do @rd /s /q \"%x\"",
     "prepublishOnly": "pnpm run build"
   },
-  "homepage": "https://eliav2.github.io/react-xarrows/",
+  "homepage": "https://github.com/jbeck018/react-xarrows-updated",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Eliav2/react-xarrows"
+    "url": "https://github.com/jbeck018/react-xarrows-updated"
   },
-  "bugs": "https://github.com/Eliav2/react-xarrows/issues",
+  "bugs": "https://github.com/jbeck018/react-xarrows-updated/issues",
   "dependencies": {
     "@types/prop-types": "^15.7.3",
     "lodash": "^4.17.21",
     "prop-types": "^15.7.2"
-  },
-  "funding": {
-    "type": "individual",
-    "url": "https://www.paypal.com/donate?hosted_button_id=CRQ343F9VTRS8"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
@@ -74,7 +71,6 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "license": "MIT",
   "files": [
     "lib",
     "package.json",
@@ -86,18 +82,5 @@
     "singleQuote": true,
     "tabWidth": 2
   },
-  "keywords": [
-    "react",
-    "reactjs",
-    "line",
-    "lines",
-    "arrow",
-    "arrows",
-    "xarrows",
-    "draw",
-    "connect",
-    "between",
-    "elements",
-    "element"
-  ]
+  "keywords": []
 }

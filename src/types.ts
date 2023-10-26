@@ -20,7 +20,9 @@ export type xarrowPropsType = {
   showXarrow?: boolean;
   curveness?: number;
   gridBreak?: string;
-  // gridRadius?: number;
+  gridRadius?: number;
+  tailTransformOffsetX: number;
+  tailTransformOffsetY: number;
   dashness?:
     | boolean
     | {
@@ -48,10 +50,10 @@ export type xarrowPropsType = {
   _cpy2Offset?: number;
 };
 
-export type pathType = typeof cPaths[number];
+export type pathType = (typeof cPaths)[number];
 export type _anchorType = anchorNamedType | anchorCustomPositionType;
 export type anchorType = _anchorType | _anchorType[];
-export type anchorNamedType = typeof cAnchorEdge[number];
+export type anchorNamedType = (typeof cAnchorEdge)[number];
 
 export type anchorCustomPositionType = {
   position: anchorNamedType;
@@ -70,6 +72,6 @@ export type svgCustomEdgeType = {
   offsetForward?: number;
 };
 
-export type svgEdgeShapeType = typeof cArrowShapes[number];
+export type svgEdgeShapeType = (typeof cArrowShapes)[number];
 export type svgEdgeType = svgEdgeShapeType | svgCustomEdgeType;
-export type svgElemType = typeof cSvgElems[number];
+export type svgElemType = (typeof cSvgElems)[number];
